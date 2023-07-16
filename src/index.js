@@ -18,10 +18,13 @@ mongoose.connect(process.env.MONGO_DB,
 
 // import routes
 import authRoutes from "./routes/auth.routes.js";
+import userRoutes from "./routes/user.routes.js";
+import verifyToken from "./routes/validate-token.js";
 
 // route middlewares
 
-app.use('/api/user', authRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/user', verifyToken, userRoutes);
 
 app.get('/', (req, res) => {
     res.json({
