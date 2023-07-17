@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
     getAll
-} from "../controllers/user.controllers.js";
+} from "../controllers/index.js";
 
 // rutes
 const router = Router();

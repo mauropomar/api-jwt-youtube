@@ -17,9 +17,8 @@ mongoose.connect(process.env.MONGO_DB,
 .catch(e => console.log('error db:', e))
 
 // import routes
-import authRoutes from "./routes/auth.routes.js";
-import userRoutes from "./routes/user.routes.js";
-import verifyToken from "./routes/validate-token.js";
+import {authRoutes , userRoutes} from './routes/index.js';
+import verifyToken from "./validations/validate-token.js";
 
 // route middlewares
 
